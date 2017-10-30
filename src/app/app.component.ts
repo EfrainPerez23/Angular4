@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  private headerName: string = 'recipes';
+
+
+  public setHeaderName(headerName: string) {
+    this.headerName = headerName;
+  }
+
+  public getHeaderName(): string {
+    return this.headerName;
+  }
 }

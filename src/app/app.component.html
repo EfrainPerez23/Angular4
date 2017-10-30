@@ -1,10 +1,12 @@
-<app-header></app-header>
+<app-header (headerSection)="setHeaderName($event)"></app-header>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes></app-recipes>
-            <app-shopping-list></app-shopping-list>
+            <app-recipes *ngIf="getHeaderName() === 'recipes'; else shopping"></app-recipes>
+            <ng-template #shopping>
+                <app-shopping-list></app-shopping-list>
+            </ng-template>
         </div>
     </div>
 </div>
